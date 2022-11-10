@@ -19,6 +19,7 @@ const [selectedProduct, setSelectedProduct] = useState('');
             <ProductListItem
               key={item.id}
               product={item}
+              isSelected={item.id === selectedProduct.id}
               onClick={() => setSelectedProduct(item)}
             />
           )}
