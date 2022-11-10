@@ -11,8 +11,16 @@ const [sideOpen, setSideOpen] = useState(true);
 const [selectedProduct, setSelectedProduct] = useState('');
 
 useEffect(() => {
-  setSideOpen(true);
+  console.log('Selected product change to', {selectedProduct});
+
 }, [selectedProduct]);
+
+useEffect(() => {
+  console.log('Side open status changes, selected product goes away')
+  setSelectedProduct('');
+}, [sideOpen])
+
+console.log('test to see if ProductView is called again')
 
   return (
     <div className="product-view">
