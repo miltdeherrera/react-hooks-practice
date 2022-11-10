@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import ProductListItem from "../ProductListItem";
+import React, { useState, useEffect } from 'react';
 import ProductDetails from "../ProductDetails";
+import ProductListItem from "../ProductListItem";
 import './ProductView.css'
 
 function ProductView({ products }) {
@@ -9,6 +9,10 @@ function ProductView({ products }) {
   // const sideOpen = true;
 const [sideOpen, setSideOpen] = useState(true);
 const [selectedProduct, setSelectedProduct] = useState('');
+
+useEffect(() => {
+  setSideOpen(true);
+}, [selectedProduct]);
 
   return (
     <div className="product-view">
